@@ -43,42 +43,40 @@
       height: auto;
     }
 
-    /* SOMBRA INFERIOR PARA LOS BOTONES */
+    /* SOMBRA INFERIOR */
     .sombra {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
 
-      height: 38%;
+      height: 40%;
 
       background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.12) 20%,
-        rgba(0, 0, 0, 0.48) 55%,
-        rgba(0, 0, 0, 0.82) 100%
+        rgba(0, 0, 0, 0.12) 18%,
+        rgba(0, 0, 0, 0.50) 55%,
+        rgba(0, 0, 0, 0.88) 100%
       );
 
       pointer-events: none;
       z-index: 1;
     }
 
-    /* BOTONES SOBRE LA IMAGEN */
+    /* BLOQUE DE ACCIONES */
     .acciones {
       position: absolute;
-
       left: 0;
       right: 0;
-
-      /* POSICIÓN DEL BLOQUE */
-      bottom: 95px;
+      bottom: 45px;
 
       padding: 0 20px;
 
       z-index: 2;
     }
 
+    /* BOTONES */
     .botones {
       width: 100%;
 
@@ -137,6 +135,38 @@
       color: #ffffff;
     }
 
+    /* INFORMACIÓN INFERIOR */
+    .info-final {
+      margin-top: 24px;
+
+      text-align: center;
+      text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .info-final strong {
+      display: block;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      line-height: 1.5;
+    }
+
+    .info-final span {
+      display: block;
+
+      margin-top: 7px;
+
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 1.4px;
+      line-height: 1.5;
+
+      color: rgba(255, 255, 255, 0.62);
+    }
+
     /* COMPUTADORA */
     @media (min-width: 768px) {
 
@@ -156,7 +186,7 @@
 
         transform: translateX(-50%);
 
-        bottom: 95px;
+        bottom: 45px;
 
         padding: 0;
       }
@@ -169,13 +199,21 @@
         transform: translateY(-2px);
         opacity: 0.93;
       }
+
+      .info-final strong {
+        font-size: 13px;
+      }
+
+      .info-final span {
+        font-size: 11px;
+      }
     }
 
     /* CELULARES PEQUEÑOS */
     @media (max-width: 420px) {
 
       .acciones {
-        bottom: 95px;
+        bottom: 40px;
         padding: 0 18px;
       }
 
@@ -186,6 +224,20 @@
 
       .botones {
         gap: 10px;
+      }
+
+      .info-final {
+        margin-top: 20px;
+      }
+
+      .info-final strong {
+        font-size: 11px;
+        letter-spacing: 0.9px;
+      }
+
+      .info-final span {
+        font-size: 9px;
+        letter-spacing: 1px;
       }
     }
 
@@ -203,10 +255,10 @@
       class="poster"
     >
 
-    <!-- SOMBRA -->
+    <!-- SOMBRA PARA LEGIBILIDAD -->
     <div class="sombra"></div>
 
-    <!-- BOTONES -->
+    <!-- ACCIONES -->
     <section class="acciones">
 
       <div class="botones">
@@ -231,6 +283,19 @@
         >
           Pedir informes
         </a>
+
+      </div>
+
+      <!-- INFORMACIÓN COMPLEMENTARIA -->
+      <div class="info-final">
+
+        <strong>
+          Equipos de 3 a 5 integrantes · Inscripción gratuita
+        </strong>
+
+        <span>
+          16 de octubre 2026 · Campestre La Pila
+        </span>
 
       </div>
 
