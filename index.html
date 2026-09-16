@@ -13,53 +13,66 @@
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
+      width: 100%;
       min-height: 100%;
       background: #0b0b0b;
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* CONTENEDOR GENERAL */
     .pagina {
       position: relative;
       width: 100%;
       max-width: 700px;
       margin: 0 auto;
-      min-height: 100vh;
-      overflow: hidden;
       background: #0b0b0b;
+      overflow: hidden;
     }
 
-    /* PÓSTER COMPLETO */
+    /* IMAGEN OFICIAL COMPLETA */
     .poster {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    /* OSCURECIDO ÚNICAMENTE EN LA PARTE INFERIOR */
+    /* DEGRADADO PARA DAR LEGIBILIDAD A LOS BOTONES */
     .sombra {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      height: 42%;
-      pointer-events: none;
+
+      height: 38%;
 
       background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,.25) 25%,
-        rgba(0,0,0,.72) 65%,
-        rgba(0,0,0,.92) 100%
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.18) 20%,
+        rgba(0, 0, 0, 0.55) 55%,
+        rgba(0, 0, 0, 0.82) 100%
       );
+
+      pointer-events: none;
+      z-index: 1;
     }
 
-    /* BOTONES SOBRE EL PÓSTER */
+    /* BLOQUE COMPLETO DE BOTONES */
     .acciones {
       position: absolute;
+
       left: 0;
       right: 0;
-      bottom: 22px;
+
+      /* AQUÍ CONTROLAMOS QUÉ TAN ARRIBA ESTÁN */
+      bottom: 150px;
 
       padding: 0 20px;
 
@@ -67,12 +80,16 @@
     }
 
     .botones {
+      width: 100%;
+
       display: flex;
       flex-direction: column;
+
       gap: 11px;
     }
 
     .boton {
+      width: 100%;
       min-height: 58px;
 
       display: flex;
@@ -91,30 +108,33 @@
       font-weight: 800;
       letter-spacing: 1px;
 
-      box-shadow: 0 4px 15px rgba(0,0,0,.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
 
       transition:
-        transform .15s ease,
-        opacity .15s ease;
+        transform 0.15s ease,
+        opacity 0.15s ease;
     }
 
     .boton:active {
-      transform: scale(.98);
+      transform: scale(0.98);
     }
 
+    /* BOTÓN INSCRIPCIÓN */
     .inscripcion {
-      background: #b82c21;
-      color: white;
+      background: #bd2d21;
+      color: #ffffff;
     }
 
+    /* BOTÓN CONVOCATORIA */
     .convocatoria {
-      background: #eee2c8;
+      background: #efe2c5;
       color: #151515;
     }
 
+    /* BOTÓN WHATSAPP */
     .whatsapp {
-      background: #176b42;
-      color: white;
+      background: #176f45;
+      color: #ffffff;
     }
 
     /* COMPUTADORA */
@@ -125,25 +145,51 @@
       }
 
       .pagina {
-        min-height: auto;
+        max-width: 700px;
       }
 
       .acciones {
+        width: 86%;
+
         left: 50%;
         right: auto;
+
         transform: translateX(-50%);
 
-        width: 86%;
-        bottom: 28px;
+        /* TAMBIÉN MÁS ARRIBA EN COMPUTADORA */
+        bottom: 150px;
 
         padding: 0;
       }
 
+      .boton {
+        min-height: 60px;
+      }
+
       .boton:hover {
         transform: translateY(-2px);
-        opacity: .93;
+        opacity: 0.93;
       }
     }
+
+    /* CELULARES PEQUEÑOS */
+    @media (max-width: 420px) {
+
+      .acciones {
+        bottom: 125px;
+        padding: 0 18px;
+      }
+
+      .boton {
+        min-height: 55px;
+        font-size: 14px;
+      }
+
+      .botones {
+        gap: 10px;
+      }
+    }
+
   </style>
 </head>
 
@@ -151,27 +197,39 @@
 
   <main class="pagina">
 
+    <!-- IMAGEN OFICIAL -->
     <img
       src="desafio-parrillero.jpg"
       alt="Desafío Parrillero Entre Amigos - Choye Rock 2026"
       class="poster"
     >
 
+    <!-- OSCURECIDO INFERIOR -->
     <div class="sombra"></div>
 
+    <!-- BOTONES SOBRE LA IMAGEN -->
     <section class="acciones">
 
       <div class="botones">
 
-        <a href="#" class="boton inscripcion">
+        <a
+          href="#"
+          class="boton inscripcion"
+        >
           Inscribir a mi equipo
         </a>
 
-        <a href="#" class="boton convocatoria">
+        <a
+          href="#"
+          class="boton convocatoria"
+        >
           Consultar convocatoria
         </a>
 
-        <a href="#" class="boton whatsapp">
+        <a
+          href="#"
+          class="boton whatsapp"
+        >
           Pedir informes
         </a>
 
