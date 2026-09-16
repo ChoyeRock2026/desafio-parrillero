@@ -13,57 +13,34 @@
       padding: 0;
     }
 
+    html {
+      background: #0d0d0d;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: #f4ead8;
-    }
-
-    .hero {
       min-height: 100vh;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,.20) 0%,
-          rgba(0,0,0,.20) 45%,
-          rgba(0,0,0,.72) 78%,
-          rgba(0,0,0,.95) 100%
-        ),
-        url("desafio-parrillero.jpg");
-
-      background-size: cover;
-      background-position: center top;
-
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-
-      padding: 40px 20px;
+      background: #0d0d0d;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
     }
 
-    .content {
+    .pagina {
       width: 100%;
-      max-width: 520px;
-      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      background: #0d0d0d;
     }
 
-    .premio {
-      margin-bottom: 22px;
-    }
-
-    .premio span {
+    /* IMAGEN OFICIAL */
+    .poster {
       display: block;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      width: 100%;
+      height: auto;
     }
 
-    .premio strong {
-      display: block;
-      margin-top: 4px;
-      font-size: 38px;
-      line-height: 1;
+    /* ÁREA DE BOTONES */
+    .acciones {
+      padding: 18px 18px 28px;
     }
 
     .botones {
@@ -73,71 +50,67 @@
     }
 
     .boton {
+      width: 100%;
+      min-height: 62px;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      min-height: 58px;
-
       padding: 15px 20px;
 
-      text-decoration: none;
-      text-transform: uppercase;
+      border-radius: 5px;
 
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1px;
-
-      border-radius: 6px;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
 
       transition:
-        transform .15s ease,
-        opacity .15s ease;
+        transform 0.15s ease,
+        opacity 0.15s ease;
     }
 
     .boton:active {
-      transform: scale(.98);
+      transform: scale(0.98);
     }
 
     .inscripcion {
-      background: #a9271c;
-      color: white;
+      background: #b52b20;
+      color: #fff;
     }
 
     .convocatoria {
-      background: #eee2ca;
-      color: #111;
+      background: #eee2c8;
+      color: #151515;
     }
 
     .whatsapp {
-      background: #17643d;
-      color: white;
+      background: #176b42;
+      color: #fff;
     }
 
-    .detalle {
-      margin-top: 22px;
+    /* COMPUTADORA */
+    @media (min-width: 768px) {
 
-      font-size: 13px;
-      line-height: 1.7;
-
-      letter-spacing: .5px;
-
-      color: rgba(255,255,255,.78);
-    }
-
-    @media (min-width: 800px) {
-
-      .hero {
-        background-position: center 25%;
+      body {
+        padding: 35px 20px;
       }
 
-      .content {
-        max-width: 560px;
+      .pagina {
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .acciones {
+        padding: 22px 28px 32px;
       }
 
       .boton:hover {
         transform: translateY(-2px);
-        opacity: .92;
+        opacity: 0.92;
       }
     }
   </style>
@@ -145,34 +118,30 @@
 
 <body>
 
-  <main class="hero">
+  <main class="pagina">
 
-    <section class="content">
+    <img
+      src="desafio-parrillero.jpg"
+      alt="Desafío Parrillero Entre Amigos - Choye Rock 2026"
+      class="poster"
+    >
 
-      <div class="premio">
-        <span>Premio al primer lugar</span>
-        <strong>$5,000 MXN</strong>
-      </div>
+    <section class="acciones">
 
       <div class="botones">
 
-        <a class="boton inscripcion" href="#">
+        <a href="#" class="boton inscripcion">
           Inscribir a mi equipo
         </a>
 
-        <a class="boton convocatoria" href="#">
+        <a href="#" class="boton convocatoria">
           Consultar convocatoria
         </a>
 
-        <a class="boton whatsapp" href="#">
+        <a href="#" class="boton whatsapp">
           Pedir informes
         </a>
 
-      </div>
-
-      <div class="detalle">
-        Inscripción gratuita · Equipos de 3 a 5 integrantes<br>
-        16 de octubre 2026 · Campestre La Pila
       </div>
 
     </section>
